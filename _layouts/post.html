@@ -1,7 +1,9 @@
 ---
-layout: post
-title: "See something"
-date: 2001-02-02
+layout: default
 ---
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}</p>
 
-Come and see.
+<div class="post">
+  {{ content }}
+</div>
