@@ -1,6 +1,10 @@
 body {
-    margin: 60px auto;
-    width: 70%;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+container {
+    flex: 1;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
