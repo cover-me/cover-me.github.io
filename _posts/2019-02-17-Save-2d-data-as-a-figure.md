@@ -66,7 +66,7 @@ plt.pcolormesh(np.zeros((10,10)))#or 300,300
 
 ![](/images/snapshoot_chrome_pdfviewer_pcolormesh_pdf_300x300.png)
 
-.pdf file in chrome, using the previewer on overleaf.com, 300*300 array:
+.pdf file in chrome, using the previewer on overleaf.com, 300*300 array, there are white lines:
 
 ![](/images/snapshoot_chrome_overleaf_pcolormesh_pdf_300x300.png)
 
