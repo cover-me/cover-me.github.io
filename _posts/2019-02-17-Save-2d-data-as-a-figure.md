@@ -1,17 +1,18 @@
 ---
 layout: post
 ---
-I edit the .md files on the webpage of github and GitHub Pages converts them into .html files automatically. Today may computer stucked and I restarted it. Then everything I wrote had gone since I didn't commit the change before the computer stucked and I can't do it after that :(
+I edit .md files on the GitHub website and GitHub converts those files into web pages (.html files) for me. Today my computer froze up when I was preparing this post. I restarted the computer. Everything went away since I didn't commit changes before the freezes. No autosaving :(
 
-I have forked a [project](https://github.com/cover-me/qtplot) of [qtplot](https://github.com/Rubenknex/qtplot). It is quite useful for visualizing/filtering/linecuting 2d or 1d data. The program outputs figures using matplotlib as it's written by python. And there is a interesting problem.
+Let's get down to business. I forked a [project](https://github.com/cover-me/qtplot) from [qtplot](https://github.com/Rubenknex/qtplot). It is quite useful for visualizing/filtering/line-cutting 2d (or 1d) data. The program outputs figures using matplotlib as it's written by python. And there is an interesting problem.
 
-There are several functions generating 2d figures in python, such as pcolormesh, pcolor, imshow, matshow... The first two are similar, so does the last two. If the data, which consists of 2d arrays X,Y,Z, are uniformly located, we can just use imshow that presents each datapint as a "pixle". Otherwise one needs pcolormesh, as pcolormesh draw polygen patches for each datapoint in the following way. 
+Several functions are provided generating 2d figures in matplotlib, such as pcolormesh, pcolor, imshow, matshow, figimage... The first two are similar, so does the second two, for the last, I don't know so far. If the data, which consists of 3 2d-arrays X, Y, Z, are uniformly sampled from the x-y plane, we can just use imshow which presents each datapoint by a "pixel". Otherwise one needs pcolormesh, as pcolormesh draw polygon patches for each datapoint in the way below:
 
 ![](/images/pcolormesh_patch.png)
 
-This is a snapshoot captured [here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pcolormesh.html)
+This is a snapshot captured [here](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pcolormesh.html)
 
-An example of pcolormesh
+Here is an example of pcolormesh:
+
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
@@ -47,27 +48,27 @@ plt.show()
 
 ![](/images/pcolormesh_example.png)
 
-Looks good. But if we save the figure into some vector grahic formats, like svg, and open it in other programs.
+Looks good. But if we save the figure into some vector graphic formats, such as svg or pdf, and open it in other programs:
 
 ```python
-plt.pcolormesh(np.zeros((10,10)))
+plt.pcolormesh(np.zeros((10,10)))#or 300,300
 ```
 
-.svg file in IE, 300*300 array
-
-![](/images/snapshoot_ie_pcolormesh_svg_300x300.png)
-
-.svg file in Chrome, 10*10 array
+.svg file in Chrome, 10*10 array. There are white lines between patches, even though the space between them should be 0:
 
 ![](/images/snapshoot_chrome_pcolormesh_svg_10x10.png)
 
-.pdf file in chrome, 300*300 array, looks fine. While .pdf files looked fine in chrome or adobe reader, but not good in AI or inkscape
+.svg file in IE, 300*300 array:
+
+![](/images/snapshoot_ie_pcolormesh_svg_300x300.png)
+
+.pdf file in chrome, 300*300 array, looks fine. While .pdf files look fine in Chrome or Adobe Reader, they are not good in AI or Inkscape. It depends on the kernel of the viewer:
 
 ![](/images/snapshoot_chrome_pdfviewer_pcolormesh_pdf_300x300.png)
 
-.pdf file in chrome, through a preview from overleaf.com, 300*300 array
+.pdf file in chrome, using the previewer on overleaf.com, 300*300 array:
 
 ![](/images/snapshoot_chrome_overleaf_pcolormesh_pdf_300x300.png)
 
-This problem has been discussed for a long time [a link](https://stackoverflow.com/questions/27092991/white-lines-in-matplotlibs-pcolor). Some (or many) programs aren't smart engouh to show two polygons sharing a same edge. There are always white lines between them polygons. Another disatavanget of pcolormesh generated vector graphics is that when there are too many patches, it will be very slow to open it from other programs. One solution is to rasterize the figure so that it is based on pixles again, and you may lost information (imshow also resamples your data by default as descussed [here](https://github.com/matplotlib/matplotlib/issues/322)). Just as the old saying goes, you press the gourd from one side, then the other side bobs up. :(
+This problem has been discussed in many places [here's a link](https://stackoverflow.com/questions/27092991/white-lines-in-matplotlibs-pcolor). The reason for the white lines is that some (or many) programs aren't smart enough to show two polygons sharing the same edge. In addition to the white lines, another disadvantage of pcolormesh (pcolor) generated vector graphs is that when there are too many patches, it will be very slow to open it from other programs. One solution is to rasterize the figure so that it is based on pixels, but you may lose some information if the dpi is not high enough. imshow also resamples your data by default as discussed [here](https://github.com/matplotlib/matplotlib/issues/322). A trick is to set interpolation='none'. It works for pdf but doesn't work for svg ([ref.](https://matplotlib.org/gallery/images_contours_and_fields/interpolation_methods.html)). I prefer to save figures as .svg files for Inkscape (pdf is also fine...). Just as the old saying goes, you press the gourd from one side, then the other side bobs up. :(
 
