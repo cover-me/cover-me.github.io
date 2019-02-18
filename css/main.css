@@ -55,6 +55,10 @@ ul.posts li {
 
 img {
     padding-left: 17%;
+    width: 60%;
+}
+
+footer.img {
     height: 2.2em;
     width: auto;
 }
