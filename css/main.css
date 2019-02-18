@@ -55,5 +55,6 @@ ul.posts li {
 
 img {
     padding-left: 17%;
-    width: 60%;
+    height: 2.2 em;
+    width: auto;
 }
