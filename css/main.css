@@ -65,6 +65,15 @@ footer img {
     width: auto;
 }
 
+@media (orientation: portrait) {
+  body {
+    width: 90%;
+  }
+  img {
+    margin-left: 5%;
+    width: 90%;
+}
+
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
 .highlight {font-size:1.1em; }
 .highlight .hll { background-color: #ffc; }
