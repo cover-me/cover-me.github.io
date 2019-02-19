@@ -33,8 +33,9 @@ h1 {
     font-size: 3em;
 }
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    text-align: justify;
+    font-size: 1.4em;
+    line-height: 1.6em;
     color: #333;
 }
 footer {
@@ -58,12 +59,13 @@ img {
     width: 60%;
 }
 
-footer.img {
+footer img {
     height: 2.2em;
     width: auto;
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
+.highlight {font-size:1.1em; }
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #888; font-weight: bold; } /* Comment */
 .highlight .err { color: #a00; background-color: #fff } /* Error */
