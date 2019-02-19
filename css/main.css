@@ -65,17 +65,8 @@ footer img {
     width: auto;
 }
 
-@media (orientation: portrait) {
-  body {
-    width: 90%;
-  }
-  img {
-    margin-left: 5%;
-    width: 80%;
-}
-
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
-.highlight {font-size:1.15em; }
+.highlight {font-size:1.1em; }
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #888; font-weight: bold; } /* Comment */
 .highlight .err { color: #a00; background-color: #fff } /* Error */
@@ -147,3 +138,12 @@ footer img {
 .css .o + .nt,
 .css .nt + .nt { color: #999; }
 /* END codes highlighting*/
+
+@media (orientation: portrait) {
+  body {
+    width: 90%;
+  }
+  img {
+    margin-left: 5%;
+    width: 80%;
+}
