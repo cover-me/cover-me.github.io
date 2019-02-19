@@ -65,7 +65,7 @@ footer img {
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
-.highlight {font-size:1.1em; }
+.highlight {overflow: auto;word-wrap: normal;white-space: pre;}
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #888; font-weight: bold; } /* Comment */
 .highlight .err { color: #a00; background-color: #fff } /* Error */
@@ -146,5 +146,9 @@ footer img {
   img {
       margin-left: 8%;
       width: 80%;
+    }
+  footer img {
+      margin-left: 0;
+      height: auto;
     }
 }
