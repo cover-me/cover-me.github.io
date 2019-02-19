@@ -140,10 +140,11 @@ footer img {
 
 @media (orientation: portrait) {
   body {
-    width: 90%;
+      font-size: 10pt;
+      width: 90%;
     }
   img {
-    margin-left: 8%;
-    width: 80%;
+      margin-left: 8%;
+      width: 80%;
     }
 }
