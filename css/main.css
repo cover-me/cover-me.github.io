@@ -67,7 +67,7 @@ footer img {
 
 @media (orientation: portrait) {
   body {
-    width: 90%;
+    width: 100%;
   }
   img {
     margin-left: 5%;
