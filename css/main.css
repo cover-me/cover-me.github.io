@@ -56,7 +56,7 @@ ul.posts li {
 }
 
 img {
-    padding-left: 17%;
+    margin-left: 17%;
     width: 60%;
 }
 
@@ -75,7 +75,7 @@ footer img {
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
-.highlight {font-size:1.1em; }
+.highlight {font-size:1.15em; }
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #888; font-weight: bold; } /* Comment */
 .highlight .err { color: #a00; background-color: #fff } /* Error */
