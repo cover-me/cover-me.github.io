@@ -67,11 +67,11 @@ footer img {
 
 @media (orientation: portrait) {
   body {
-    width: 100%;
+    width: 90%;
   }
   img {
     margin-left: 5%;
-    width: 90%;
+    width: 80%;
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
