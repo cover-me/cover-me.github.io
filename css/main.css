@@ -59,6 +59,11 @@ img {
     width: 60%;
 }
 
+video {
+    margin-left: 17%;
+    width: 60%;
+}
+
 footer img {
     height: 2.2em;
     width: auto;
