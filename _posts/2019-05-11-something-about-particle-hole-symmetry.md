@@ -36,7 +36,7 @@ $$H_{BdG} (d_i^\dagger \lvert G\rangle) = 2 h'_i (d_i^\dagger \lvert G\rangle)$$
 
 $$H_{BdG} (d_i \lvert G\rangle) = - 2 h'_i (d_i \lvert G\rangle)$$
 
-$d_i \lvert G\rangle = 0$, otherwise $d_i \lvert G\rangle$ will be an eigenstate with engegy lower than the ground state, which is not right. Then $d_i^\dagger \lvert G\rangle \neq 0$, is an eigenstate with energy $h'_i$ (we dropped 1/2 when defined $H_{BdG}$, now we put it back). $d_i (d_i^\dagger\lvert G\rangle) = \lvert G\rangle$. We got the quasiparticles! It should be noted that transition from $\lvert G\rangle$ to $d_i^\dagger \lvert G\rangle$ does not necessary means a particle number change of $\pm 1$.
+$d_i \lvert G\rangle = 0$, otherwise $d_i \lvert G\rangle$ will be an eigenstate with engegy lower than the ground state, which is not right. Then $d_i^\dagger \lvert G\rangle \neq 0$, is an eigenstate with energy $h'_i$ (we dropped 1/2 when defined $H_{BdG}$, now we put it back). $d_i (d_i^\dagger \lvert G \rangle) = \lvert G \rangle$. We got the quasiparticles! It should be noted that transition from $\lvert G \rangle$ to $d_i^\dagger \lvert G \rangle$ does not necessary means a particle number change of $\pm 1$.
 
 Since every state has an energy $\geq$ ground state, it looks like every quasi-particle should have an energy $\geq 0$. One may then ask what are those negative states in the spectrum of superconductors, are they just "mirror" states of positive ones? I don't think so. $d_i^\dagger \lvert G\rangle$ sometimes have less particles (not quasiparticles) than $\lvert G\rangle$, in that case, we say it is a quasihole. When we plot the spectrum of quasielectrons, that state stays below 0.
 
