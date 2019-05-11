@@ -29,19 +29,15 @@ $$H_{BdG} = \begin{pmatrix}
 
 Eigenvalues of $H_{BdG}$ are $(h_1,h_2,...,h_n,-h_1,-h_2,...,-h_n)$. It should be noted that $h_i$ may be negtive and $-h_i$ may be positive. While $h_1$, $h_2$, ..., $h_n$ are the eigenvalues of $H$, $-h_1$, $-h_2$, ..., $-h_n$ are irregular numbers, just something simililar to guidelines or image charges.
 
-$\left|0,0,1,...\right>$
 
-ok
+Now we turn to the case where there is hopping or superconducting coupling. What will be the difference? Since there is interaction now, $H$ can't be diagonalized in the above signle particle way. The Hilbert space we are intersted in changes from $n$ dimensional $\lvert1,0,0,...\rangle$,$\lvert0,1,0,...\rangle$,$\lvert0,0,1,...\rangle$ to $2^n$ dimennsional $\lvert\pm1,\pm1,\pm1,...\rangle$. But we still get an "unchanged" $H_{BdG}$. In fact, there exits a  linear transformation from $(c_1, c_2, ..., c_1^\dagger, c_2^\dagger, ...)$ to $(d_1, d_2, ..., d_1^\dagger, d_2^\dagger, ...)$, the latter also obey fermionic commutation relations and $H_{BdG} = \sum_i h'_i d_i^\dagger d_i + \sum_i (-h'_i) d_i d_i^\dagger$. We can always choose the transformation so that $h_i \geq 0$ for all $i$. If $\lvertG\rangle$ is the ground state with engergy $0$, then,
 
+$$H_{BdG} (d_i^\dagger \lvertG\rangle) = 2 h'_i (d_i^\dagger \lvertG\rangle)$$
 
-Now we turn to the case where there is hopping or superconducting coupling. What will be the difference? Since there is interaction now, $H$ can't be diagonalized in the above signle particle way. The Hilbert space we are intersted in changes from $n$ dimensional $\left|1,0,0,...\right>$,$\left|0,1,0,...\right>$,$\left|0,0,1,...\right>$ to $2^n$ dimennsional $\left|\pm1,\pm1,\pm1,...\right>$. But we still get an "unchanged" $H_{BdG}$. In fact, there exits a  linear transformation from $(c_1, c_2, ..., c_1^\dagger, c_2^\dagger, ...)$ to $(d_1, d_2, ..., d_1^\dagger, d_2^\dagger, ...)$, the latter also obey fermionic commutation relations and $H_{BdG} = \sum_i h'_i d_i^\dagger d_i + \sum_i (-h'_i) d_i d_i^\dagger$. We can always choose the transformation so that $h_i \geq 0$ for all $i$. If $\left|G\right>$ is the ground state with engergy $0$, then,
+$$H_{BdG} (d_i \lvertG\rangle) = - 2 h'_i (d_i \lvertG\rangle)$$
 
-$$H_{BdG} (d_i^\dagger \left|G\right>) = 2 h'_i (d_i^\dagger \left|G\right>)$$
+$d_i \lvertG\rangle = 0$, otherwise $d_i \lvertG\rangle$ will be an eigenstate with engegy lower than the ground state, which is not right. Then $d_i^\dagger \lvertG\rangle \neq 0$, is an eigenstate with energy $h'_i$ (we dropped 1/2 when defined $H_{BdG}$, now we put it back). $d_i (d_i^\dagger\lvertG\rangle) = \lvertG\rangle$. We got the quasiparticles! It should be noted that transition from $\lvertG\rangle$ to $d_i^\dagger \lvertG\rangle$ does not necessary means a particle number change of $\pm 1$.
 
-$$H_{BdG} (d_i \left|G\right>) = - 2 h'_i (d_i \left|G\right>)$$
-
-$d_i \left|G\right> = 0$, otherwise $d_i \left|G\right>$ will be an eigenstate with engegy lower than the ground state, which is not right. Then $d_i^\dagger \left|G\right> \neq 0$, is an eigenstate with energy $h'_i$ (we dropped 1/2 when defined $H_{BdG}$, now we put it back). $d_i (d_i^\dagger\left|G\right>) = \left|G\right>$. We got the quasiparticles! It should be noted that transition from $\left|G\right>$ to $d_i^\dagger \left|G\right>$ does not necessary means a particle number change of $\pm 1$.
-
-Since every state has an energy $\geq$ ground state, it looks like every quasi-particle should have an energy $\geq 0$. One may then ask what are those negative states in the spectrum of superconductors, are they just "mirror" states of positive ones? I don't think so. $d_i^\dagger \left|G\right>$ sometimes have less particles (not quasiparticles) than $\left|G\right>$, in that case, we say it is a quasihole. When we plot the spectrum of quasielectrons, that state stays below 0.
+Since every state has an energy $\geq$ ground state, it looks like every quasi-particle should have an energy $\geq 0$. One may then ask what are those negative states in the spectrum of superconductors, are they just "mirror" states of positive ones? I don't think so. $d_i^\dagger \lvertG\rangle$ sometimes have less particles (not quasiparticles) than $\lvertG\rangle$, in that case, we say it is a quasihole. When we plot the spectrum of quasielectrons, that state stays below 0.
 
 How to broke particle-hole symmetry?
