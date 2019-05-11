@@ -40,4 +40,5 @@ $d_i \lvert G\rangle = 0$, otherwise $d_i \lvert G\rangle$ will be an eigenstate
 
 Since every state has an energy $\geq$ ground state, it looks like every quasi-particle should have an energy $\geq 0$. One may then ask what are those negative states in the spectrum of superconductors, are they just "mirror" states of positive ones? I don't think so. $d_i^\dagger \lvert G\rangle$ sometimes have less particles (not quasiparticles) than $\lvert G\rangle$, in that case, we say it is a quasihole. When we plot the spectrum of quasielectrons, that state stays below 0.
 
-How to broke particle-hole symmetry?
+So what is particle-hole symmetry and how to broken it?
+
