@@ -1,2 +1,3 @@
-Just want to see how the page works
+A repository hosting GitHub Pages
+
 https://cover-me.github.io/
