@@ -33,3 +33,4 @@ Out[50]: 4
 In [51]: del c
 ```
 ![](/images/ipython_ansi_test.png)
+
