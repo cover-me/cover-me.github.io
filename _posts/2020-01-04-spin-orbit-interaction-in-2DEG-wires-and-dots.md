@@ -116,7 +116,7 @@ The result for a dot is similar but with two oscillators, as shown in Ref. [ref_
 
 $$H=\frac{p_1^2+p_2^2}{2m^*}+\frac{m^*}{2}(\omega_1^2q_1^2+\omega_2^2 q_2^2)+\frac{1}{2}g\mu_BB\sigma_z$$
 
-The last term is the Zeeman energy. It leads to level crossings at a finite field. At those crossing points, however, spin-orbit coupling lifts the degeneracy and leaves a gap. The anti-crossing gap between the lowest two levels is $2\frac{l}{\lambda_R}E_z$, where $E_z$ is the Zeeman energy, $l=\sqrt{\hbar/m^*\sqrt{\omega_0^2+\omega_c^2/4}}, \lambda_R=\hbar/m^*\alpha$. (Ref. [ref_dot]).
+The last term is the Zeeman energy. It leads to level crossings at a finite field. At those crossing points, however, spin-orbit coupling lifts the degeneracy and leaves a gap. The anti-crossing gap between the lowest two levels is $2\frac{l}{\lambda_R}E_z$, where $E_z$ is the Zeeman energy, $l=\sqrt{\hbar/m\sqrt{\omega_0^2+\omega_c^2/4}}, \lambda_R=\hbar/m\alpha$. (Ref. [ref_dot]).
 
 [ref_wiki_re] https://en.wikipedia.org/wiki/Rashba_effect
 
