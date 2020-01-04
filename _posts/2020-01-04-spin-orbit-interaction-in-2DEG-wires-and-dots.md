@@ -11,7 +11,7 @@ The so-called Rashba effect arises when there is a non-zero electric field perpe
 $$H_{SO} = \frac{1}{2}g \mu_B\frac{1}{m c^2} (\sigma \times p) \cdot E\\
 \Rightarrow H_R = \frac{\alpha}{\hbar} (\sigma \times p) \cdot z = \frac{\alpha}{\hbar} (\sigma_x p_y - \sigma_y p_x)$$
 
-While the first equation is derivated for a real electron, the second one applys for both electron, and quasi-electron in crystals. In the latter case $\alpha/\hbar$ is not necessary to be $\frac{1}{2} g \mu_B \frac{1}{mc^2} |E|$. [ref_review_rashba]
+While the first equation is derivated for a real electron, the second one applys for both electron, and quasi-electron in crystals. In the latter case $\alpha/\hbar$ is not necessary to be $\frac{1}{2} g \mu_B \frac{1}{mc^2} E_0$. [ref_review_rashba]
 
 The total Hamiltonian becomes:
 
