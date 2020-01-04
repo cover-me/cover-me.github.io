@@ -92,7 +92,7 @@ $$
 
 There are still two sets of SdH oscillations. But the frequency difference is too large to make a beat (of course, the density of the two subbands are very different when $\Delta$ is large).
 
-#Wires and dots (w/ and w/o magnetic fields)
+# Wires and dots (w/ and w/o magnetic fields)
 
 For an ideal 1D system along x direction ($z=y=0$), assuming $E$ and $B$ are still in z direcion as they were in the 2D case, the total Hamiltonian: 
 
@@ -116,7 +116,7 @@ The result for a dot is similar but with two oscillators, as shown in Ref. [ref_
 
 $$H=\frac{p_1^2+p_2^2}{2m^*}+\frac{m^*}{2}(\omega_1^2q_1^2+\omega_2^2 q_2^2)+\frac{1}{2}g\mu_BB\sigma_z$$
 
-The last term is the Zeeman energy. It leads to level crossings at a finite field. At those crossing points, however, spin-orbit coupling lifts the degeneracy and leaves a gap. The anti-crossing gap between the lowest two levels is $2\frac{l}{\lambda_R}E_z$, where $E_z$ is the Zeeman energy, $l=\sqrt{\hbar/m^*\sqrt{\omega_0^2+\omega_c^2/4}}$, $\lambda_R=\hbar/m^*\alpha$. (Ref. [ref_dot]).
+The last term is the Zeeman energy. It leads to level crossings at a finite field. At those crossing points, however, spin-orbit coupling lifts the degeneracy and leaves a gap. The anti-crossing gap between the lowest two levels is $2\frac{l}{\lambda_R}E_z$, where $E_z$ is the Zeeman energy, $l=\sqrt{\hbar/m^*\sqrt{\omega_0^2+\omega_c^2/4}}, \lambda_R=\hbar/m^*\alpha$. (Ref. [ref_dot]).
 
 [ref_wiki_re] https://en.wikipedia.org/wiki/Rashba_effect
 
@@ -128,8 +128,7 @@ The last term is the Zeeman energy. It leads to level crossings at a finite fiel
 
 [ref_H0+HR] https://journals.aps.org/prb/pdf/10.1103/PhysRevB.57.11911
 
-[ref_H0+HR+Hz] https://journals.aps.org/prl/pdf/10.p(delta*0.1,density,m,g,Gamma)
-p(delta*10,density,m,g,Gamma)1103/PhysRevLett.78.1335
+[ref_H0+HR+Hz] https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.78.1335
 
 [ref_H0+HR+Hd+Hz] https://arxiv.org/pdf/cond-mat/0602473.pdf
 
