@@ -61,6 +61,7 @@ $E\propto\sqrt{n}$. This is very similar to  the Landau level spectrum in graphe
 Please find spectrums of more complicated situations in Ref. [ref_H0+HR], [ref_H0+HR+Hz], [ref_H0+HR+Hd+Hz], you can tell what they are about by these labels. For example, for $H_0+H_R$, Ref. [ref_H0+HR] gives (without a provement):
 
 $$E_n = \frac{1}{2} \hbar \omega_c, n=0$$
+
 $$E^\pm_n = \hbar \omega_c\left(n\pm\frac{1}{2}\sqrt{1+n\frac{\Delta^2}{E_F\hbar\omega_c}}\right), n=1,2,3,...$$
 
 $\Delta = 2\alpha k_F$, is the zero-field spin splitting at $k=k_F$ (see [eq_rashba]).  If $E_F>>\Delta>>\hbar \omega_c$, which is usually guaranteed by the materials and low magnetic fields, for Landau levels near the Fermi surface
