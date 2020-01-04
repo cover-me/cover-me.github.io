@@ -118,21 +118,21 @@ $$H=\frac{p_1^2+p_2^2}{2m^*}+\frac{m^*}{2}(\omega_1^2q_1^2+\omega_2^2 q_2^2)+\fr
 
 The last term is the Zeeman energy. It leads to level crossings at a finite field. At those crossing points, however, spin-orbit coupling lifts the degeneracy and leaves a gap. The anti-crossing gap between the lowest two levels is $2\frac{l}{\lambda_R}E_z$, where $E_z$ is the Zeeman energy, $l=\sqrt{\hbar/m\sqrt{\omega_0^2+\omega_c^2/4}}, \lambda_R=\hbar/m\alpha$. (Ref. [ref_dot]).
 
-[ref_wiki_re] https://en.wikipedia.org/wiki/Rashba_effect
+[ref_wiki_re](https://en.wikipedia.org/wiki/Rashba_effect)
 
-[ref_review_rashba] https://www.nature.com/articles/nmat4360.pdf
+[ref_review_rashba](https://www.nature.com/articles/nmat4360.pdf)
 
-[ref_winkler] http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.464.376&rep=rep1&type=pdf
+[ref_winkler](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.464.376&rep=rep1&type=pdf)
 
-[ref_LL_in_graphene] http://www-f1.ijs.si/~ramsak/Nanofizika/grafen/zala_lenarcic_grafen.pdf
+[ref_LL_in_graphene](http://www-f1.ijs.si/~ramsak/Nanofizika/grafen/zala_lenarcic_grafen.pdf)
 
-[ref_H0+HR] https://journals.aps.org/prb/pdf/10.1103/PhysRevB.57.11911
+[ref_H0+HR](https://journals.aps.org/prb/pdf/10.1103/PhysRevB.57.11911)
 
-[ref_H0+HR+Hz] https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.78.1335
+[ref_H0+HR+Hz](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.78.1335)
 
-[ref_H0+HR+Hd+Hz] https://arxiv.org/pdf/cond-mat/0602473.pdf
+[ref_H0+HR+Hd+Hz](https://arxiv.org/pdf/cond-mat/0602473.pdf)
 
-[ref_dot] https://arxiv.org/pdf/cond-mat/0409614.pdf
+[ref_dot](https://arxiv.org/pdf/cond-mat/0409614.pdf)
 
 
 ```python
