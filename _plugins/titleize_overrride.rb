@@ -1,7 +1,7 @@
 module Jekyll
   module Utils
     def titleize_slug(slug)
-      slug.split("-").join(" ")
+      slug.split('-').join(' ')
     end
   end
 end
