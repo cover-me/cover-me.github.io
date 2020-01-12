@@ -1,6 +1,5 @@
 ---
 layout: post
-title: A prototype for data taking programs
 ---
 As you can infer from the name, Condensed matter physicists study matters that condensed. The name doesn't really matter. Is there anything that never condenses? Even Helium condenses into the liquid at 4.2 K and solid at lower temperatures + higher pressures. Not all condensed matters are studied by condensed matter physicists. For example, the sun and stars are studied by astronomer physicists. Condensed matter physicists usually focus on matters that can be obtained on Earth and are small enough to put into a scientific machine for experiments.
 
