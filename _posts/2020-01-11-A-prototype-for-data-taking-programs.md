@@ -4,7 +4,7 @@ title: A prototype for data taking programs
 ---
 As you can infer from the name, Condensed matter physicists study matters that condensed. The name doesn't really matter. Is there anything that never condenses? Even Helium condenses into the liquid at 4.2 K and solid at lower temperatures + higher pressures. Not all condensed matters are studied by condensed matter physicists. For example, the sun and stars are studied by astronomer physicists. Condensed matter physicists usually focus on matters that can be obtained on Earth and are small enough to put into a scientific machine for experiments.
 
-One kind of those experiments is called electronic transport experiments. Electrons transport from one side to the other in a conductor if a voltage is applied, forming a current. Electronic transport measurements measure those currents and voltages, calculate resistance and conductance. 
+One kind of those experiments is called electronic transport experiment. Electrons transport from one side to the other in a conductor if a voltage is applied, forming a current. Electronic transport measurements measure those currents and voltages, calculate resistance and conductance. 
 
 The idea of electronic transport is very simple. But the physics is rich. Many effects are revealed by simply measuring resistance, such as the superconducting, Hall effect family, non-linear behavior of PN junctions, transistors, LED, Qubits...
 
