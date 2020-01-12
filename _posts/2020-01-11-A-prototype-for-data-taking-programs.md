@@ -10,7 +10,7 @@ The idea of electronic transport is very simple. But the physics is rich. Many e
 
 In order to do the measurements, one need instruments applying or measuring signals, and a program to control these instruments. The connection between a computer running the program and the instruments may look like this:
 
-![](https://github.com/cover-me/instrDAQ/blob/master/documentation/images/setup.jpg)
+![](https://github.com/cover-me/instrDAQ/raw/master/documentation/images/setup.jpg)
 
 There are many kinds of connectors that can link a computer and an instrument. GPIB is widely used for its robustness and scalability. The serial connection is favored because of cheapness. Ethernet and USB are more and more popular due to their success in consumer electronics. Which connector to use doesn't really matter for a data acquisition program. The communication between instruments and computers is based on commands/APIs that don't relly on the choice of interfaces.
 
