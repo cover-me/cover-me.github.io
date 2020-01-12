@@ -26,17 +26,17 @@ The first thing a data acquisition program needs to do is
   
 >> d. The program is portable. It can be put into a USB stick and run on another computer. This is irrelevant to (a)-(c) but it is not difficult to achieve.
 
-For most script languages, it is not hard to achieve the points above. [qtlab](https://github.com/heeres/qtlab), which is a python based data acquisition program, has a folder for "drivers". Here, a driver is a script that contains the features mentioned above. If there is a new instrument, one can easily add a new driver (which is a text file of script) and put it into that folder.
+For most script languages, it is not hard to achieve the goals above. [qtlab](https://github.com/heeres/qtlab), which is a python based data acquisition program, has a folder for "drivers". Here, a driver is a script that has above features. If there is a new instrument, one can easily add a new driver (which is a text file of code) and put it into that folder.
 
-LabVIEW can load VIs dynamicly. Therefore one can also have a folder of "drivers" for LabVIEW and throw VI files in. I haven't tried this feature. The problem for LabVIEW is that not every computer installs it, you need to purchase a license. It is painful if one is asked to add new instrument support while there is no LabVIEW installed. The portability is not a problem for LabVIEW because the program can be packed into an executable. [instrDAQ](https://github.com/cover-me/instrDAQ) put instrument information into a text file so there is no need to do any LabVIEW programming for new instruments. However, this program doesn't achieve 1.b.
+LabVIEW can load VIs dynamically. Therefore one can also create a folder of "drivers" for LabVIEW programs and throw VI files in. I haven't tried this feature. The problem for LabVIEW is that not every computer has it installed, you need to purchase a license. It is painful if one is asked to add support for a new instrument while there is no LabVIEW on the computer. The portability is not a problem for LabVIEW because the program can be packed into an executable file. [instrDAQ](https://github.com/cover-me/instrDAQ) put instrument information into a text file so that there is no need to do more LabVIEW programming for new instruments. However, this program doesn't achieve goal 1.b.
 
-Once we are able to set and read from instruments, we begin to worry about how to control the experiments. My experience told me, experiments are just scans, i.e. set one or a group of output channels in a for loop while getting readings from instruments. Most scans are 1D or 2D scans, sometimes are 3D scans. 1D and 2D scans can be treated as special 3D scans, the extra dimensions have a length of 1. I don't find it necessary to bother myself with higher dimensions so far. 
+Once we are able to set and read from instruments, we begin to worry about controlling the experiments. My experience told me, experiments are just scans, i.e. set one or a group of output channels in a for-loop while getting readings from instruments. Most scans are 1D or 2D scans, sometimes they are 3D scans. 1D and 2D scans can be treated as special 3D scans, with extra dimensions the length of 1. I don't find it necessary to bother myself with higher dimensions so far. 
 
-There are continuous outputs and discrete outputs. Sometimes a magnetic field is a continuous output, the program triggers a scan and the field keep changing until it receives a "pause" message or reaches limits. The program keeps reading from instruments during the scan. Gate voltages and magnetic fields (again) on some other times are discrete outputs. During the scan, the program not only reads from instruments but also sets the outputs point by point, discretely.  
+There are continuous outputs and discrete outputs. Sometimes a magnetic field is a continuous output, the program triggers a scan and the output field keep ramping until it receives a "pause" message or reaches limits. The program keeps reading from instruments during the scan. Gate voltages and magnetic fields (again) on some other times are discrete outputs. During the scan, the program not only reads from instruments but also sets the outputs point by point, discretely. Whether an output should be a continuous one or a discrete one is determined by people who do the experiments, not the insturments.  
 
 The following is the second feature  a data acquisition program needs to do:
 
->2 Build-in support for linear scans up to 2 dimensions, would be better if 3 dimensions or more. 1D and 2D scans are special cases of 3D scans. Even though the linear 3D scan doesn't cover all scans, it is very powerful.
+>2 Build-in support for linear scans up to 2 dimensions, would be better if 3 dimensions or more. 1D and 2D scans are special cases of 3D scans. Even though the linear 3D scan doesn't cover all scans, it is very powerful and useful for most of the time.
 
 >>a. Read data from a specific group of instruments during the scan.
 
@@ -51,16 +51,16 @@ e.scan('g3','dac3',0,3,10,)#or e.scan(['g3'],['dac3'],[0],[3],10,)
 e.scan(['g1','g2'],['dac1','dac2'],[0,0],[3,4],10,  ['g3'],['dac3'],[0],[3],10,  ['g5'],['dac5'],[0],[3],10)
 ```
 
-The program should also show realtime data and save data. It makes me have a headache to choose a format for the data. I am interested in .npy files + metafiles + the file system provided by the operating system. I don't feel excited about HDF5 especially after reading [this post](https://cyrille.rossant.net/moving-away-hdf5/). However, I am still using ASCII characters for storing data now. Why bother it, even the most exciting curves, showing quantization of some combinations of physical constants, have only several hundred points. 
+The program should also show realtime figures, save data and some sort of log. It makes me feel a headache to choose a format for the data. I am interested in .npy files + metafiles + the file system provided by operating system. I don't feel excited about HDF5 especially after reading [this post](https://cyrille.rossant.net/moving-away-hdf5/). By the way, I am still using ASCII characters for storing data. Why bother it, even the most exciting curves, showing quantization of some combinations of physical constants, have only several hundred points.
 
->3 Save data and real-time visualization. 
+>3 Save data, take notes and real-time visualization.
 
-LabVIEW has some advantages when it comes to realtime visualization. It is a graphical programming language natively supporting parallel processing. However, the program [instrDAQ](https://github.com/cover-me/instrDAQ) was first designed for 1D scans, there are only 1D real-time curves. For python, you have to write the GUI yourself! Luckily, cool guys on GitHub shared [qtplot](https://github.com/Rubenknex/qtplot) and [qtlab](https://github.com/heeres/qtlab). After some modification (see my [fork of qtplot](https://github.com/cover-me/qtplot) and [scan script](https://github.com/cover-me/repository/tree/master/qt/qtlab%20scan%20scripts) ) data can be taken from qtlab while visualized with qtplot in realtime. Here are [demos](https://cover-me.github.io/2019/03/31/qtplot-demo.html). The math filters in qtplot are also very useful for 2D data analysis.
+LabVIEW has some advantages when it comes to realtime visualization. It is a graphical programming language natively supporting parallel processing. However, the program [instrDAQ](https://github.com/cover-me/instrDAQ) was first designed for 1D scans, there are only 1D real-time curves. For python, you have to write the GUI yourself! Luckily, cool guys on GitHub shared [qtplot](https://github.com/Rubenknex/qtplot) and [qtlab](https://github.com/heeres/qtlab). After some modification (see my [fork of qtplot](https://github.com/cover-me/qtplot) and [scan script](https://github.com/cover-me/repository/tree/master/qt/qtlab%20scan%20scripts) ) data can be taken from qtlab while visualized with qtplot in realtime. Here are [demos](https://cover-me.github.io/2019/03/31/qtplot-demo.html). The math filters in qtplot are also very useful for 2D data analysis. The combination also makes note-taking easy. The scan script sends every scan commands to a Word file automatically while qtplot sends every figure to Word by clicking a button. The Word looks better for notes with the web layout and the navigation pane. For instrDAQ (I once called it Paramecium and drew the icon), it doesn't take notes in a document, but save screenshots of the front panel for every scan.
 
-At last, the prototype!
+The prototype
 
 ```
-data file                
+data file, notes                
     ↑    ↘(1)                    
 -----------------------------
 | scan   →(2) visualization |
