@@ -1,8 +1,9 @@
 ---
 layout: post
+title: I am so happy
 ---
-I made the blog by following [this](http://jmcglone.com/guides/github-pages/) article. It says that one can set up the website running with GitHub Pages and Jekyll in an afternoon. I spent two afternoons over the weekend, however, because I struggled with making further modifications to these files. I like the idea of developing a GitHub Pages blog in a browser without installing Git/Ruby/Jekyll. I am an idiot that only after finishing the blog I realized there must be a Jekyll engine running behind GitHub Pages. I just uploaded raw .md files and .html templates. GitHub Pages would take care of the rest.
+I made this blog by following the article [here](http://jmcglone.com/guides/github-pages/). It says that one can set up a website running by GitHub Pages and Jekyll in one afternoon. I spent an extra afternoon at the weekend because I struggled with webpage styles. I enjoyed the idea of developing a GitHub-Pages-blog with only a web browser. Just forget about Git/Ruby/Jekyll. I am an idiot that not until finished the blog I realized there must be a Jekyll engine running behind GitHub Pages. I just uploaded .md files and .html templates. GitHub Pages takes care of the rest.
 
-So, sounds like an old saying, what is the meaning of this blog? Maybe for practicing my English writing skill, or sharing pieces of draft thought about physics and something related. I used to have several blogs before. But I haven't used them for a long time. I still remember the first time I modified a .css file. And now I am doing such things again. If the day comes when a blog is not read by people anymore, maybe we can throw that blog into the universe by a radio.
+So what is the motivation of this blog? Maybe for practicing my English writing skill, and sharing pieces of draft thought about physics and something related. I had several blogs before. The memory that I modified a .css file is so ancient. Now I am doing it again. If the day comes that no blog is read by anyone anymore, we can throw posts into the universe by a radio.
 
-Now the blog has been set. I am going to discover the winter sunshine outside. 
+The blog is built. I am happy to go outside to discover winter sunshine.
