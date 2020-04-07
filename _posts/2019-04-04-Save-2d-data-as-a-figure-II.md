@@ -26,6 +26,6 @@ More experiments:
 
 The result is bad if I save the PDF file to an SVG file by Inkscape and vice versa. If I open the .pdf file and save it as a .pdf file in Inkscape, the result is good. I extracted images in these files and found no problem. The images in SVG files were extracted by opening them in a text editor and copy the encoded base64 string of image to any online decoders. The images in .pdf files were extracted by copy-pasting them from Adobe Reader to Windows Paint.
 
-At last, I find the reason and solution for the white spaces and blurred images in SVG files, by comparing the XML attributes for files in Inkscape: just add "preserveAspectRatio: none" and "style: image-rendering:optimizeSpeed" attributes to the SVG image!
+At last, I find the reason and solution for the white spaces and blurred images in SVG files, by comparing the XML attributes for files in Inkscape: just add "preserveAspectRatio: none" and "style: image-rendering:~~optimizeSpeed~~pixelated" attributes to the SVG image!
 
 Now I prefer PDF over SVG. Even though there are some tricks editing PDF in Inkscape, but those are easier to deal with than directly modifying XML attributes in a GUI based workflow.
