@@ -55,7 +55,9 @@ ul.posts li {
 }
 
 img {
-    margin-left: 17%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
     width: 60%;
 }
 
@@ -63,9 +65,11 @@ video {
     width: 100%;
 }
 
-footer img {
+footer object {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
     height: 2.2em;
-    width: auto;
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
@@ -148,11 +152,15 @@ footer img {
       width: 90%;
     }
   img {
-      margin-left: 8%;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
       width: 80%;
     }
-  footer img {
-      margin-left: 0;
+  footer object {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
       height: auto;
     }
 }
