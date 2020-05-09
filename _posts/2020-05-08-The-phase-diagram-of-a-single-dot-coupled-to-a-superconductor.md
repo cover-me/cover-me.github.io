@@ -8,7 +8,7 @@ $$
 H = \epsilon (n_\uparrow + n_\downarrow) + U n_\uparrow n_\downarrow + \Delta (c^\dagger_\uparrow c^\dagger_\downarrow + c_\downarrow c_\uparrow)
 $$
 
-Let $\left|n_\uparrow n_\downarrow\right> = \left|00\right>,\left|01\right>,\left|10\right>,\left|11\right>$ be the basis, we have
+Let $\left|n_\uparrow n_\downarrow\right\> = \left|00\right\>,\left|01\right\>,\left|10\right\>,\left|11\right\>$ be the basis, we have
 
 $$
 c_\uparrow = \begin{bmatrix}
@@ -60,12 +60,14 @@ $$
 
 or (can U be negative?)
 
+![](/images/sdphase.png)
+
 **P.S.**
 
 If $U = 0$, the spectrum is $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\}$. The ground state engergy is $E_3$, while the exciting energy is $\sqrt{\Delta^2 + \epsilon^2}$ or $2\sqrt{\Delta^2 + \epsilon^2}$, just like there are 0, 1, or 2 quasiparticles whoes energy is $\sqrt{\Delta^2 + \epsilon^2}$.
 
 
-We then try the BdG Hamiltonian mentioned in [this](2019/05/11/something-about-particle-hole-symmetry.html) post as a test.
+We then try the BdG Hamiltonian mentioned in [this](../../../2019/05/11/something-about-particle-hole-symmetry.html) post as a test.
 
 $$
 \begin{align}
