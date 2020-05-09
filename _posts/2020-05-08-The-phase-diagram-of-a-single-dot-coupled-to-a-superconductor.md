@@ -67,7 +67,7 @@ or (can U be negative?)
 If $U = 0$, the spectrum is $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\}$. The ground state engergy is $E_3$, while the excitation energy is $\sqrt{\Delta^2 + \epsilon^2}$ or $2\sqrt{\Delta^2 + \epsilon^2}$, just like there are 0, 1, or 2 quasiparticles whoes energy is $\sqrt{\Delta^2 + \epsilon^2}$.
 
 
-We then try the BdG Hamiltonian mentioned in [this](../../../2019/05/11/something-about-particle-hole-symmetry.html) post as a test.
+We then try the BdG Hamiltonian mentioned in [this](../../../2019/05/11/something-about-particle-hole-symmetry.html) old post as a test (and find something wrong...).
 
 $$
 \begin{align}
@@ -94,7 +94,7 @@ $$
 After a series of similar calculations, H (without the first term $\epsilon$) becomes
 
 $$
-H = \begin{bmatrix}
+H_{BdG1} = \begin{bmatrix}
 \frac{\epsilon}{2} & & &\Delta\\
  &\frac{\epsilon}{2}& &\\
 & &-\frac{\epsilon}{2}&\\
@@ -113,7 +113,34 @@ $$
 \right)
 $$
 
-It can be interpreted as if there are two kinds of quasiparticles, one with energy $t$ and the other one with energy $\sqrt{\Delta^2+t^2}$. Why there are two instead of one?
+It appears that there are two kinds of quasiparticles, one with energy $t$ and the other one with energy $\sqrt{\Delta^2+t^2}$. Why there are two instead of one? And why $\sqrt{\Delta^2+t^2}$ instead of $\sqrt{\Delta^2+\epsilon^2}$? It doesn't look right!
+
+Let's look back at the real spectrum in a more symetric way, $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\} = \epsilon + \{0,0,-\sqrt{\Delta^2+\epsilon^2},\sqrt{\Delta^2+\epsilon^2}\}$. So there are two quasiparticles, with energy $0$ and $\sqrt{\Delta^2+\epsilon^2}$.
+
+The symetric part of eigenvalues corresponds to this Hamiltonian:
+
+$$
+H_{BdG2} = \begin{bmatrix}
+\epsilon & & &\Delta\\
+ &0& &\\
+& &0&\\
+\Delta& & &-\epsilon\\
+\end{bmatrix}
+$$
+
+To get $H_{BdG2}$, we need
+
+$$
+\begin{align}
+H &= \epsilon (n_\uparrow + n_\downarrow) + \Delta (c^\dagger_\uparrow c^\dagger_\downarrow + c_\downarrow c_\uparrow)\\
+&= \epsilon (c_\uparrow^\dagger c_\uparrow + c_\downarrow^\dagger c_\downarrow) + \Delta(...)\\
+&= \epsilon (c_\uparrow^\dagger c_\uparrow + 1 - c_\downarrow c_\downarrow^\dagger) + \Delta(...)\\
+&= \epsilon + \epsilon (c_\uparrow^\dagger c_\uparrow  - c_\downarrow c_\downarrow^\dagger) + \Delta(...)\\
+\end{align} 
+$$
+
+There are 4 states instead of 2 states + 2 auxiliary states as claimed the old post.
+
 
 **P.S. 2**
-GitHubpages has troubles when there is a "|" in an inline equation.
+GitHub pages have troubles when there is a "|" in an inline equation.
