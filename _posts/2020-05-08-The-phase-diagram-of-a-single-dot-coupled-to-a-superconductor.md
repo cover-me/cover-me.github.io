@@ -139,7 +139,7 @@ H &= \epsilon (n_\uparrow + n_\downarrow) + \Delta (c^\dagger_\uparrow c^\dagger
 \end{align} 
 $$
 
-There are 4 states instead of 2 states + 2 auxiliary states as claimed the old post.
+The key is the spin. In the old post particles are spinless while here they are spinfull. Note that there are 4 states instead of 2 states + 2 auxiliary states as claimed the old post.
 
 
 **P.S. 2**
