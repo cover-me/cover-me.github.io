@@ -3,7 +3,9 @@ layout: post
 title: The Majorana phase boundary in nanowires
 ---
 
-According to Ref [1], $$\mathcal{H}=(p^2/2m-\mu(y))\tau_z + u(y) p \sigma_z \tau_z + B(y) \sigma_x + \Delta(y) \tau_x$$
+According to Ref [1], 
+
+$$\mathcal{H}=(p^2/2m-\mu(y))\tau_z + u(y) p \sigma_z \tau_z + B(y) \sigma_x + \Delta(y) \tau_x$$
 
 $\sigma$ and $\tau$  operate in spin and particle-hole space, respectively.
 
@@ -11,7 +13,7 @@ Let $\xi = p^2/2m-\mu(y)$, with the help of Mathematica, we get,
 
 $$E = \pm \sqrt{\xi^2 + (u p)^2 + B^2 +\Delta^2 \pm 2\sqrt{\xi^2 u^2 p^2 + \xi^2 B^2 + B^2 \Delta^2}}$$
 
-Note that $up$ is $u*p$ instead of the word "up". Don't mix $u$ with $\mu$.
+Note that $up$ is $u*p$ instead of the word "up". There are both $u$ and $\mu$ in the Hamiltonian, dont' mix them up.
 
 Ref [1] said the spectrum is "conveniently obtained by squaring the Hamiltonian twice", so let's do it. 
 
@@ -79,12 +81,14 @@ $$(a + b + c +d)^2 - 4(a b + a c + c d)\\
 $$
 
 else,
+
 $$
 (a + b + c +d)^2 - 4(a b + a c + c d)\\
 =(a + b - c +d)^2 + 4 (c - a) b \geq 0
 $$
 
 So the solution for $(a + b + c +d)^2 - 4(a b + a c + c d) = 0$ is 
+
 $$
 a-c=b+d=0\Rightarrow \left|B\right|=\left|\xi\right|, up=0, \Delta=0\\
 or\\
