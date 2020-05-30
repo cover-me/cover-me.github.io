@@ -97,7 +97,7 @@ or\\
 a-c+d=b=0 \Rightarrow u p = 0, \left|B\right|=\sqrt{\xi^2+\Delta^2}
 $$
 
-If $u \neq 0$, $\Delta \neq 0$,the only solution for a zero gap is $p = 0$ and $\left|B\right|=\sqrt{\mu^2+\Delta^2}$, which happens to be the topological phase boudary for Majorana in a nanowire.
+If $u \neq 0$, $\Delta \neq 0$,the only solution for a zero gap is $p = 0$ and $| B |=\sqrt{\mu^2+\Delta^2}$, which happens to be the topological phase boudary for Majorana in a nanowire.
 
 ```
 [1] PhysRevLett.105.177002
