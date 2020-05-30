@@ -104,7 +104,7 @@ If $u \neq 0$, $\Delta \neq 0$,the only solution for a zero gap is $p = 0$ and $
 import numpy as np
 import holoviews as hv
 hv.extension('matplotlib')
-%output backend='matplotlib' fig='svg' size=80
+%output backend='matplotlib' widget_location='bottom' fig='svg' size=80
 
 def Ep(p,m,mu,u,B,Delta,sign=-1):
   xi = p**2/2/m - mu
@@ -130,10 +130,10 @@ curve_dict = {(mu,u,B,Delta):get_spec(mu,u,B,Delta) for mu in mus
               for u in us for B in Bs for Delta in Deltas}
 hmap = hv.HoloMap(curve_dict, kdims=['$\mu$','u','B','$\Delta$'])
 # hv.save(hmap,'MB phase boundary.html')
-hmap
+# hmap
 ```
 
-<iframe src="/images/MB phase boundary.html" title="MB phase boundary" width="100%" height="300px" frameborder="0"></iframe>
+<iframe src="/images/MB phase boundary.html" title="MB phase boundary" width="100%" height="500px" frameborder="0"></iframe>
 
 ```
 [1] PhysRevLett.105.177002
