@@ -99,8 +99,43 @@ $$
 
 If $u \neq 0$, $\Delta \neq 0$,the only solution for a zero gap is $p = 0$ and $\| B \|=\sqrt{\mu^2+\Delta^2}$, which happens to be the topological phase boudary for Majorana in a nanowire.
 
+
+```python
+import numpy as np
+import holoviews as hv
+hv.extension('matplotlib')
+%output backend='matplotlib' fig='svg' size=80
+
+def Ep(p,m,mu,u,B,Delta,sign=-1):
+  xi = p**2/2/m - mu
+  return np.sqrt(xi**2 + (u*p)**2 + B**2 +Delta**2 
+                 + sign*2*np.sqrt(xi**2*u**2*p**2 + xi**2*B**2 + B**2*Delta**2))
+def get_spec(mu,u,B,Delta):
+  p = np.linspace(-2,2,200)
+  m = 1/2
+  E1 = Ep(p,m,mu,u,B,Delta,sign=-1)
+  E2 = Ep(p,m,mu,u,B,Delta,sign=1)
+  cvs = hv.Overlay([hv.Curve((p, E1),'p','E'),
+                    hv.Curve((p, -E1)),
+                    hv.Curve((p, E2)),
+                    hv.Curve((p, -E2))])
+  return cvs.options({'Curve': 
+                      dict(color='black',xlim=(-2, 2), ylim=(-2, 2),
+                           title="$(m,\mu,u,B,\Delta):(%s,%s,%s,%s,%s)$"%(m,mu,u,B,Delta))})
+mus = np.linspace(-.5,.5,5)
+us = np.linspace(0,1,3)
+Bs=np.linspace(0,1,5)
+Deltas=np.linspace(0,1,5)
+curve_dict = {(mu,u,B,Delta):get_spec(mu,u,B,Delta) for mu in mus
+              for u in us for B in Bs for Delta in Deltas}
+hmap = hv.HoloMap(curve_dict, kdims=['$\mu$','u','B','$\Delta$'])
+# hv.save(hmap,'MB phase boundary.html')
+hmap
+```
+
+<iframe src="/images/MB phase boundary.html" title="MB phase boundary" width="100%" height="300px" frameborder="0"></iframe>
+
 ```
 [1] PhysRevLett.105.177002
 [2] http://djalil.chafai.net/blog/2012/10/14/determinant-of-block-matrices/
 ```
-<iframe src="/images/MB phase boundary.html" title="MB phase boundary"></iframe>
