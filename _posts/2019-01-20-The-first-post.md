@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I am so happy
+title: The first post
 ---
 I made this blog by following the article [here](http://jmcglone.com/guides/github-pages/). It says that one can set up a website running by GitHub Pages and Jekyll in one afternoon. I spent an extra afternoon at the weekend because I struggled with webpage styles. I enjoyed the idea of developing a GitHub-Pages-blog with only a web browser. Just forget about Git/Ruby/Jekyll. I am an idiot that not until finished the blog I realized there must be a Jekyll engine running behind GitHub Pages. I just uploaded .md files and .html templates. GitHub Pages takes care of the rest.
 
