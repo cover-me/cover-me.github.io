@@ -2,3 +2,4 @@ name: Phy Phy Physics Park
 markdown: kramdown
 plugins:
   - jekyll-sitemap
+  - jemoji
