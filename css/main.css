@@ -64,8 +64,8 @@ video {
 }
 
 footer img {
-    height: 2.2em;
-    width: auto;
+    height: 2.2em!important;
+    width: auto!important;
 }
 
 /* codes highlighting, copy from http://loyc.net/res/css/syntax.css*/
@@ -152,7 +152,7 @@ footer img {
       width: 80%;
     }
   footer img {
-      margin-left: 0;
-      height: auto;
+      margin-left: 0!important;
+      height: auto!important;
     }
 }
