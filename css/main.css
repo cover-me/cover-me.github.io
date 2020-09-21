@@ -147,7 +147,7 @@ footer img {
       font-size: 10pt;
       width: 90%;
     }
-  img {
+  img:not([class]) {
       margin-left: 8%;
       width: 80%;
     }
