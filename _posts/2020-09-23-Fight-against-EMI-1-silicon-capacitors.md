@@ -3,11 +3,11 @@ layout: post
 title: Fight against EMI 1: Silicon capacitors
 ---
 
-![](/images/EMI and filters_0.png)
+![](/images/EMI%20and%20filters_0.png)
 
-![](/images/EMI and filters.png)
+![](/images/EMI%20and%20filters.png)
 
-![](/images/EMI and filters_1.png)
+![](/images/EMI%20and%20filters_1.png)
 
 In short, one needs filters in real-world sensitive measurements. Even if there is an excellent shielding outside the device, the cables, and the instruments, there will still be problems caused by power cables (who go through the shielding), microprocessors, crystal oscillators, digital buses magnetic fields, triboelectric/piezoelectric effect (vibrations), thermoelectric effect, cosmic rays, and so on. Ideal cap act as a good conductor for high-frequency signals,  diverting those signals to the shield (skin effect). Ironically, common caps are not ideal caps above GHz.
 
