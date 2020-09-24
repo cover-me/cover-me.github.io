@@ -17,7 +17,7 @@ Caps change capacitance or even lose capacitance at low temperatures because of 
 
 They are good. But the silicon cap is the rising star.
 
-The silicon cap is expensive, delicate (people in the electronics shop would complain about picking up and soldering it), stable, and high-performance (especially at high frequencies). They are more ideal than traditional ceramic caps. I think the dielectric is SiOx or something similar, so k is not so high, but Q is high. The size can be very small because it utilized technologies from the semiconductor industry. Introductions of silicon caps can be found in Ref. 4 (2D version, thin-film caps) and Ref. 5 (3D version, pillar caps)
+The silicon cap is expensive, delicate (people in the electronics shop would complain about picking up and soldering it), stable, and high-performance (especially at high frequencies). They are more ideal than traditional ceramic caps. I think the dielectric is SiOx or something similar, so k is not so high, but Q is high. The size can be very small because it utilized technologies from the semiconductor industry. Introductions of silicon caps can be found in Ref. 4 (2D version, thin-film caps) and Ref. 5 (3D version, pillar caps). Note: A large capacitance in a small size means a small breakdown voltage. 
 
 References
 1. https://web.stanford.edu/group/GGG/theses/Andrew%20Bestwick%20-%20Quantum%20Edge%20Transport%20in%20Topological%20Insulators.pdf
