@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fight against EMI 1: Silicon capacitors
+title: "Fight against EMI 1: Silicon capacitors"
 ---
 
 ![](/images/EMI%20and%20filters_0.png)
