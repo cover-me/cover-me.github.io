@@ -3,11 +3,11 @@ layout: post
 title: Transformation matrix in KLayout
 ---
 
-Designing a nanodevice including taking pictures of nanowires who has 4 landmarks, importing pictures in Klayout (a free layout editor), aligning landmarks in the photos to pre-patterned landmarks in the layout (see the figure below), and drawing patterns such as source, drain, or gate for lithography.
+Designing a nanodevice including taking pictures of nanowires with 4 landmarks, importing pictures in Klayout (a free layout editor), aligning image landmarks to pre-patterned layout landmarks (see figures below), and drawing patterns such as source, drain, or gate for lithography.
 
-![](images/gds_align1.png)
+![](/images/gds_align1.png)
 
-![](images/gds_align2.png)
+![](/images/gds_align2.png)
 
 To automate the alignment, we need to calculate transform matrice. The formula is very complicated according to this [post](https://www.klayout.de/forum/discussion/666/how-to-calculate-the-transformation-matrix3d). However, I found a simpler one in Zhaoen's PKout 2.0 for KLayout. The snippet is shown as follows (the script can be found [here](https://github.com/cover-me/repository/tree/master/klayout/PKout_3.1))
 
@@ -28,6 +28,6 @@ def toMatrix(self,ldMarks,gdsMarks):# modified from Zhaoen's PKout
     return np.array(B*(A.I))
 ```
 
-`_toTransMatrix` returns the transform matrix A from $[1,0,0],[0,1,0],[0,0,1],[1,1,1]$ to $[x_i,y_i,1]$ i = 1 ,2, 3, 4. `toMatrix` return the transform marix from image landmarkers to layout (gds) landmakers, which is what we need.
+`_toTransMatrix` returns the transform matrix A from $[1,0,0],[0,1,0],[0,0,1],[1,1,1]$ to $[x_i,y_i,1]$ i = 1 ,2, 3, 4. `toMatrix` returns the transform marix from image landmarkers to layout (gds) landmakers, which is what we need.
 
-The transformation [x,y,z]->T[x,y,z] is performed by carrying out the matrix multiplication $f_M([x,y,z]) = M [x,y,z]^T$ followed by the perspective divide P,  $P([x,y,z]) = [x/z,y/z,1] if z!=0 else [x,y,z]$. We have $T_M = P f_M$, $T_{M1}T_{M2} = P f_{M1} P f_{M2} = P f_{M1} f_{M2} = T_{M1 M2}$.
+The transformation $[x,y,z] \rightarrow T_M [x,y,z]$ is performed by carrying out the matrix multiplication $f_M([x,y,z]) = M [x,y,z]^T$ followed by the perspective divide P,  $P([x,y,z]) = [x/z,y/z,1]$ if $z!=0$ else $[x,y,z]$. We have $T_M = P f_M$, $T_{M1}T_{M2} = P f_{M1} P f_{M2} = P f_{M1} f_{M2} = T_{M1 M2}$.
