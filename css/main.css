@@ -56,7 +56,7 @@ ul.posts li {
 
 img:not([class]) {
     margin-left: 17%;
-    width: 60%;
+    max-width: 60%;
 }
 
 video {
@@ -149,7 +149,7 @@ footer img {
     }
   img:not([class]) {
       margin-left: 8%;
-      width: 80%;
+      max-width: 80%;
     }
   footer img {
       margin-left: 0!important;
