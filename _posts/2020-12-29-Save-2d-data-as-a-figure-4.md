@@ -16,10 +16,10 @@ plt.savefig('a.pdf')
 
 The result in the Jupyter notebook, which is PNG by default, looks good:
 
-![](images/pdf_blur_1.png)
+![](/images/pdf_blur_1.png)
 
 However, the generated PDF file looks bad in Chrome (good in Adobe Reader):
 
-![](images/pdf_blur.png)
+![](/images/pdf_blur.png)
 
 Chrome and some other PDF previewers automatically apply interpolation to pixels in the PDF file. The file may look fine if n is smaller but bad again whem zoomed out.
