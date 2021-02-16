@@ -9,7 +9,7 @@ I want to combine the main text and supplementary in a single TEX file. I find i
 % \maketitle
 % Put it all together to format the title block.
 % Note: using \@tempcnta and \@tempa to communicate between procedures.
-765 \def\maketitle{%
+765 \def\maketitle{\%
 766 % \say\@authors
 767 \@author@finish
 768 \title@column\titleblock@produce
@@ -29,7 +29,7 @@ I want to combine the main text and supplementary in a single TEX file. I find i
 781 \let\@address\@empty
 782 \let\maketitle\relax
 783 \let\thanks\@gobble
-784 \titlepage@sw{%
+784 \titlepage@sw{\%
 785 \clearpage
 786 }{}%
 787 }%
