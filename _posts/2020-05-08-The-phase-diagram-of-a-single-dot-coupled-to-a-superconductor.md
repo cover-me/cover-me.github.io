@@ -64,10 +64,10 @@ or (can U be negative?)
 
 **P.S.**
 
-If $U = 0$, the spectrum is $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\}$. The ground state engergy is $E_3$, while the excitation energy is $\sqrt{\Delta^2 + \epsilon^2}$ or $2\sqrt{\Delta^2 + \epsilon^2}$, just like there are 0, 1, or 2 quasiparticles whoes energy is $\sqrt{\Delta^2 + \epsilon^2}$.
+If $U = 0$, the spectrum is $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\}$. The ground state engergy is $E_3$. The excitation energy is $\sqrt{\Delta^2 + \epsilon^2}$ or $2\sqrt{\Delta^2 + \epsilon^2}$.
 
 
-We then try the BdG Hamiltonian mentioned in [this](../../../2019/05/11/something-about-particle-hole-symmetry.html) old post as a test (and find something wrong...).
+We then try the BdG Hamiltonian mentioned in [this](../../../2019/05/11/something-about-particle-hole-symmetry.html) post as an exercise.
 
 $$
 \begin{align}
@@ -75,11 +75,12 @@ H &= \epsilon (n_\uparrow + n_\downarrow) + \Delta (c^\dagger_\uparrow c^\dagger
 &= \epsilon (c_\uparrow^\dagger c_\uparrow + c_\downarrow^\dagger c_\downarrow) + \Delta(...)\\
 &= \frac{\epsilon}{2}(c_\uparrow^\dagger c_\uparrow + c_\uparrow^\dagger c_\uparrow + c_\downarrow^\dagger c_\downarrow + c_\downarrow^\dagger c_\downarrow) + \Delta(...)\\
 &=\frac{\epsilon}{2}(c_\uparrow^\dagger c_\uparrow + 1-c_\uparrow c_\uparrow^\dagger + c_\downarrow^\dagger c_\downarrow + 1-c_\downarrow c_\downarrow^\dagger) + \Delta(...)\\
-&=\epsilon + \frac{\epsilon}{2}(c_\uparrow^\dagger c_\uparrow -c_\uparrow c_\uparrow^\dagger + c_\downarrow^\dagger c_\downarrow -c_\downarrow c_\downarrow^\dagger) + \Delta(c^\dagger_\uparrow c^\dagger_\downarrow + c_\downarrow c_\uparrow)
+&=\epsilon + \frac{\epsilon}{2}(c_\uparrow^\dagger c_\uparrow -c_\uparrow c_\uparrow^\dagger + c_\downarrow^\dagger c_\downarrow -c_\downarrow c_\downarrow^\dagger) + \Delta(c^\dagger_\uparrow c^\dagger_\downarrow + c_\downarrow c_\uparrow)\\
+&=\epsilon + \frac{\epsilon}{2}(c_\uparrow^\dagger c_\uparrow -c_\uparrow c_\uparrow^\dagger + c_\downarrow^\dagger c_\downarrow -c_\downarrow c_\downarrow^\dagger) + \frac{\Delta}{2}(c^\dagger_\uparrow c^\dagger_\downarrow - c^\dagger_\downarrow c^\dagger_\uparrow + c_\downarrow c_\uparrow - c_\uparrow c_\downarrow)
 \end{align} 
 $$
 
-Let $c_\uparrow,c_\downarrow,c_\uparrow^\dagger,c_\downarrow^\dagger$ be $(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)$. we get,
+Let $c_\uparrow,c_\downarrow,c_\uparrow^\dagger,c_\downarrow^\dagger$ be $(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)$, we have,
 
 $$
 c_\uparrow^\dagger c_\uparrow = (1,0,0,0)^\dagger (1,0,0,0)\\
@@ -91,55 +92,29 @@ c_\uparrow^\dagger c_\uparrow = (1,0,0,0)^\dagger (1,0,0,0)\\
 \end{bmatrix}
 $$
 
-After a series of similar calculations, H (without the first term $\epsilon$) becomes
+Drop the constant $\epsilon$ in the first term of $H$, we have the BdG Hamiltonian
 
 $$
-H_{BdG1} = \begin{bmatrix}
-\frac{\epsilon}{2} & & &\Delta\\
- &\frac{\epsilon}{2}& &\\
-& &-\frac{\epsilon}{2}&\\
-\Delta& & &-\frac{\epsilon}{2}\\
-\end{bmatrix}
-$$
-
-Find the eigensystem with Mathematica ($t = \epsilon/2$):
-
-$$
-\left(
-\begin{array}{cccc}
- -t & t & -\sqrt{\Delta ^2+t^2} & \sqrt{\Delta ^2+t^2} \\
- \{0,0,1,0\} & \{0,1,0,0\} & \left\{-\frac{\sqrt{\Delta ^2+t^2}-t}{\Delta },0,0,1\right\} & \left\{-\frac{-\sqrt{\Delta ^2+t^2}-t}{\Delta },0,0,1\right\} \\
-\end{array}
-\right)
-$$
-
-It appears that there are two kinds of quasiparticles, one with energy $t$ and the other one with energy $\sqrt{\Delta^2+t^2}$. Why there are two instead of one? And why $\sqrt{\Delta^2+t^2}$ instead of $\sqrt{\Delta^2+\epsilon^2}$? It doesn't look right!
-
-Let's look back at the real spectrum in a more symetric way, $\{E_1,E_2,E_3,E_4\} = \{\epsilon,\epsilon,-\sqrt{\Delta^2+\epsilon^2}+\epsilon,\sqrt{\Delta^2+\epsilon^2}+\epsilon\} = \epsilon + \{0,0,-\sqrt{\Delta^2+\epsilon^2},\sqrt{\Delta^2+\epsilon^2}\}$. So there are two quasiparticles, with energy $0$ and $\sqrt{\Delta^2+\epsilon^2}$.
-
-The symetric part of eigenvalues corresponds to this Hamiltonian:
-
-$$
-H_{BdG2} = \begin{bmatrix}
+H_{BdG} = \frac{1}{2} \begin{bmatrix}
 \epsilon & & &\Delta\\
- &0& &\\
-& &0&\\
+ &\epsilon&-\Delta &\\
+&-\Delta&-\epsilon&\\
 \Delta& & &-\epsilon\\
 \end{bmatrix}
 $$
 
-To get $H_{BdG2}$, we need
+Find the eigensystem with Mathematica:
 
 $$
-\begin{align}
-H &= \epsilon (n_\uparrow + n_\downarrow) + \Delta (c^\dagger_\uparrow c^\dagger_\downarrow + c_\downarrow c_\uparrow)\\
-&= \epsilon (c_\uparrow^\dagger c_\uparrow + c_\downarrow^\dagger c_\downarrow) + \Delta(...)\\
-&= \epsilon (c_\uparrow^\dagger c_\uparrow + 1 - c_\downarrow c_\downarrow^\dagger) + \Delta(...)\\
-&= \epsilon + \epsilon (c_\uparrow^\dagger c_\uparrow  - c_\downarrow c_\downarrow^\dagger) + \Delta(...)\\
-\end{align} 
+\left(
+\begin{array}{cccc}
+ -\frac{1}{2} \sqrt{\Delta ^2+\epsilon ^2} & -\frac{1}{2} \sqrt{\Delta ^2+\epsilon ^2} & \frac{1}{2} \sqrt{\Delta ^2+\epsilon ^2} & \frac{1}{2} \sqrt{\Delta ^2+\epsilon ^2} \\
+ \left\{-\frac{\sqrt{\Delta ^2+\epsilon ^2}-\epsilon }{\Delta },0,0,1\right\} & \left\{0,-\frac{\epsilon -\sqrt{\Delta ^2+\epsilon ^2}}{\Delta },1,0\right\} & \left\{-\frac{-\sqrt{\Delta ^2+\epsilon ^2}-\epsilon }{\Delta },0,0,1\right\} & \left\{0,-\frac{\sqrt{\Delta ^2+\epsilon ^2}+\epsilon }{\Delta },1,0\right\} \\
+\end{array}
+\right)
 $$
 
-The key is the spin. In the old post particles are spinless while here they are spinfull. Note that there are 4 states instead of 2 states + 2 auxiliary states as claimed the old post.
+That is $E = \pm \sqrt{\epsilon^2 + \Delta^2}/2$, the excitation energy is $\sqrt{\epsilon^2 + \Delta^2}$.
 
 
 **P.S. 2**
