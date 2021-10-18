@@ -15,7 +15,7 @@ The script can be found in https://github.com/cover-me/repository/tree/master/qt
 
 ## Non-atomic reading
 
-`self._query_list` is the list of channels to read. A group of data is generated after going through `self._query_list`. To run non-atomic reading, the get function of a reading channel must have the` flag` argument, which may not always be in the case. See Sec. Note.
+`self._query_list` is the list of channels to read. A group of data is generated after going through `self._query_list`. To run non-atomic reading, the get function of a reading channel must have the` flag` argument, which may not always be in the case. See Sec. Notes.
 
 ```python
 def take_data_nonatomic(self):
@@ -38,7 +38,7 @@ def take_data_nonatomic(self):
 
 ##  Non-atomic setting
 
-Non-atomic setting is a little more complicated. There are two kinds of output channels. One is like the magnet, we set, it ramps gradually. The other one is a DAC or a voltage source, we set, it changes immediately. For the second type of outputs, qtlab has the feature that they can be assigned with `maxstep` and `stepdelay`. If the difference between the target value (SV) and the current value (PV) is larger than the `maxstep`, qtlab will sweep the channel step by step, each step by the change of `maxstep` and wait for `stepdelay` except the last step which may be smaller than the `maxstep` and no waiting.  The code bellow only takes care of the second type of output channels (see Sec. Note).
+Non-atomic setting is a little more complicated. There are two kinds of output channels. One is like the magnet, we set, it ramps gradually. The other one is a DAC or a voltage source, we set, it changes immediately. For the second type of outputs, qtlab has the feature that they can be assigned with `maxstep` and `stepdelay`. If the difference between the target value (SV) and the current value (PV) is larger than the `maxstep`, qtlab will sweep the channel step by step, each step by the change of `maxstep` and wait for `stepdelay` except the last step which may be smaller than the `maxstep` and no waiting.  The code bellow only takes care of the second type of output channels (see Sec. Notes).
 
 ```python
 def do_set_nonatomic(self, setpoint_list):
