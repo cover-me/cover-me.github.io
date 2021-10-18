@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data taking program: make it non-atomic
+title: Data taking program\: make it non-atomic
 ---
 
 # Motivation
