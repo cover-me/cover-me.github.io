@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "How to name data files in numbers"
