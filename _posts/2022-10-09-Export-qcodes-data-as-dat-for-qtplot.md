@@ -3,7 +3,7 @@ layout: post
 title: Export Qcodes data as DAT for qtplot
 ---
 
-[Qcodes](https://github.com/QCoDeS/Qcodes) is a Python-based data acquisition framework for quantum measurement. It stores data in DB files. qtplot ([my fork repo](https://github.com/cover-me/qtplot)) is a convenient Python-based data visualization tool for analyzing and publication. One can apply math filters (such as a derivative in y direction and smooth), explore linecuts, play with the colorbar in qtplot. In this post I will show the readers how to export Qcodes datasets as DAT files so that they can be analyzed with qtplot.
+[Qcodes](https://github.com/QCoDeS/Qcodes) is a Python-based data acquisition framework for quantum measurement. It stores data in DB files. qtplot ([my fork repo](https://github.com/cover-me/qtplot)) is a convenient Python-based data visualization tool for analyzing and publication. One can apply math filters (such as a derivative in y direction and smooth), explore linecuts, play with the colorbar in qtplot. In this post I will show readers how to export Qcodes datasets as DAT files so that they can be analyzed with qtplot.
 
 # Why?
 
@@ -13,7 +13,7 @@ Even with Qcodes installed, the visualization tool is less powerful than qtplot 
 
 # Qcodes data structure and its data viewer
 
-For what I understand, Qcodes stores binary data in a database (DB file). Inside the DB file, each dataset has a unique id called "run_id". Datasets are also tagged with experiment names ('characterization', 'go to regime 1', 'go to regime 2'), sample names ('device A', 'device B'), and 'run' names. Qcodes provide a data viewer, Plottr, which looks like this:
+For what I understand, Qcodes stores binary data in a database (DB file). Inside the DB file, each dataset has a unique id called "run_id". Datasets are also tagged with experiment names ('characterization', 'go to regime 1', 'go to regime 2'), sample names ('device A', 'device B'), and 'run' names. Qcodes provides a data viewer, Plottr, which looks like this:
 
 ![image](https://user-images.githubusercontent.com/22870592/194747264-412f2212-b9a4-4012-bff7-38b8a6b6a28e.png)
 
@@ -154,7 +154,7 @@ export_dat_file(dataset)
 export_setting_file(dataset)
 ```
 
-Drag and drop the DAT file to qtplot:
+Drag and drop the DAT file onto qtplot:
 
 ![image](https://user-images.githubusercontent.com/22870592/194759078-f00a3b85-3588-43be-9ff8-c0655ecd9ada.png)
 
