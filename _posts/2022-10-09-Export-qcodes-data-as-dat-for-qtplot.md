@@ -27,6 +27,7 @@ Data can be visualized, however no filters, linecuts, or colormap settings can b
 First, define functions:
 
 ```python
+
 import pandas as pd
 import numpy as np
 import os
@@ -57,10 +58,10 @@ def add_index_to_col(df):
     if len(df.index.names)>1:# more than 1 indexes
         ind_shape = df.index.levshape
         # df.index.levels[0]： values (list) of the first index
-        if not list(df.index.levels[0]) == [i[0] for i in df.index[:ind_shape[0]]]:
-            step = -1
-        else:
+        if list(df.index.levels[0]) == [i[0] for i in df.index[:ind_shape[0]]] or list(df.index.levels[0])[::-1] == [i[0] for i in df.index[:ind_shape[0]]]:
             step = 1
+        else:
+            step = -1
         new_col_names = list(df.index.names)[::step] + list(df.columns)
         size_list = list(ind_shape[::step])
     else:
@@ -113,10 +114,11 @@ def get_dat_meta(dataset, dataframe, size_list):
     meta_string += '\n'
     return meta_string
 
-def export_setting_file(dataset):
-    dat_path = get_dat_filename(dataset)
+def export_setting_file(dataset, dat_path=None):
+    if dat_path is None:
+        dat_path = get_dat_filename(dataset)
     settings_str = f'''\
-Filename: {dat_path}
+Filename: {os.path.split(dat_path)[-1]}
 Timestamp: {dataset.run_timestamp()}
 
 '''
@@ -134,24 +136,27 @@ Timestamp: {dataset.run_timestamp()}
     with open(dat_path.replace('.dat','.set'), 'w') as f:
         f.write(settings_str)
         
-def export_dat_file(dataset):
+def export_dat_file(dataset,save_to_path=None):
     df,size_list = dataset_to_dataframe(dataset)
     meta = get_dat_meta(dataset,df,size_list)
-    save_to_path = get_dat_filename(dataset)
+    if save_to_path is None:
+        save_to_path = get_dat_filename(dataset)
     with open(save_to_path, 'w') as f:
         f.write(meta)
-        df.to_csv(f, sep='\t', float_format='%.12e', lineterminator='\n', index=False, header=False)
+        df.to_csv(f, sep='\t', float_format='%.12e', line_terminator='\n', index=False, header=False)
 ```
 
 Then load a dataset and export files: 
 
 ```python
-db_file_path = os.path.join(os.getcwd(), 'plottr_for_live_plotting_tutorial.db')
+db_file_path = r'C:\**\**.db'
 initialise_or_create_database_at(db_file_path)
-dataset = qc.load_by_id(34)
+folder = r'C:\**\**'
 
-export_dat_file(dataset)
-export_setting_file(dataset)
+dataset = qc.load_by_id(5)
+dat_path =  f'{folder}\\{get_dat_filename(dataset)}'
+export_dat_file(dataset,dat_path)
+export_setting_file(dataset,dat_path)
 ```
 
 Drag and drop the DAT file onto qtplot:
