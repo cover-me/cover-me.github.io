@@ -15,7 +15,7 @@ The installation of Docker on either Windows or Linux can be found elsewhere.
 
 MySQL serves as the database for Nextcloud. To install MySQL, execute the following code line by line. Replace `[PASSWORD1]` and `[PASSWORD2]` with your desired passwords. Lines beginning with "#" are comments. The database user name `nextcloud` and its password `[PASSWORD2]` will be required during the initialization of Nextcloud. 
 
-```console
+```shell
 # Create a MySQL containter named "mysql", with root password [PASSWORD1]
 docker run -itd --name mysql -e MYSQL_ROOT_PASSWORD=[PASSWORD1] mysql
 # Open the shell of the container
@@ -42,7 +42,7 @@ exit
 
 Nginx serves as the HTTP server for the server computer. To install Nginx, execute the following code line by line. Replace `[path to .key file]` and `[path to .crt file]` with your desired paths. 
 
-```console
+```shell
 # Create an Nginx container named "nginx". Expose 443 and 80 ports for further communication.
 docker run -itd --name nginx -p 443:443 -p 80:80 nginx
 # Open the shell of the container
@@ -56,13 +56,13 @@ apt install nano
 
 Next, make changes to the configuration file of Nginx.
 
-```console
+```shell
 nano /etc/nginx/conf.d/default.conf
 ```
 
 Delete all content and replace it with the following code
 
-```console
+```shell
 # generated 2023-01-02, Mozilla Guideline v5.6, nginx 1.23.3, OpenSSL 1.1.1n, modern configuration
 # https://ssl-config.mozilla.org/#server=nginx&version=1.23.3&config=modern&openssl=1.1.1n&guideline=5.6
 
@@ -177,7 +177,7 @@ Replace `[server_domain1]` and `[server_domain2]` with the actual domains. Thank
 
 Finally, excute the following code in the shell line by line.
 
-```console
+```shell
 # exit the container
 exit
 # restart container nginx
@@ -186,7 +186,7 @@ sudo docker restart nginx
 
 ## Install Nextcloud
 
-```console
+```shell
 # Create and run the container named "nextcloud". "--link" links a domain and a container IP in the hosts file
 sudo docker run -itd  -v [path to data folder]:/var/www/html/data --name nextcloud --link mysql:mysql --link nginx:[server_domain1] --link nginx:[server_domain2] nextcloud
 ```
@@ -195,7 +195,7 @@ Replace [path to data folder] with a path on the server computer if you want to 
 
 Now, open the browser on the server or a local client and navigate to `https://[server_domain1]/` (e.g., `https://server.local/`). The browser will display a warning indicating a Potential Security Risk Ahead,  becasue the website's certificate is self-signed. Ignore this warning by clicking on "Advanced..." and then "Accept the risk and continue" (for Firefox). The web page will prompt you to create an admin account for Nextcloud. Choose MySQL as the database type and enter the appropriate database username and password. The host is mysql. Skip the installation of apps, as there may be errors before further configuring Nextcloud using the code below,
 
-```console
+```shell
 # Open the configuration file
 docker exec -it nextcloud bash
 apt update
@@ -235,13 +235,13 @@ Browse https://[server_domain2]/ and trust the Onlyoffice site's certification (
 
 Redis is used to improve the file locking efficiency in Nextcloud. If Redis is not used, a warning may appear on the administration page of Nextcloud.
 
-```console
+```shell
 sudo docker run -itd --name redis --link nginx:[server_domain1] --link nginx:[server_domain2] redis
 ```
 
 Add 
 
-```console
+```shell
   'memcache.locking' => '\OC\Memcache\Redis',
   'memcache.distributed' => '\OC\Memcache\Redis',
   'redis' => [
