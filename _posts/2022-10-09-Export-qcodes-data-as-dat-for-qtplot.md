@@ -74,6 +74,7 @@ def add_index_to_col(df):
     df = df.reindex(columns=new_col_names)
     return df,size_list
 
+
 def dataset_to_dataframe(dataset):
     df_dict = dataset.to_pandas_dataframe_dict()
     if are_indexes_equal(df_dict):
@@ -114,11 +115,10 @@ def get_dat_meta(dataset, dataframe, size_list):
     meta_string += '\n'
     return meta_string
 
-def export_setting_file(dataset, dat_path=None):
-    if dat_path is None:
-        dat_path = get_dat_filename(dataset)
+def export_setting_file(dataset,folder='',overwrite=False):
+    dat_path = get_dat_filename(dataset)
     settings_str = f'''\
-Filename: {os.path.split(dat_path)[-1]}
+Filename: {dat_path}
 Timestamp: {dataset.run_timestamp()}
 
 '''
@@ -129,24 +129,67 @@ Timestamp: {dataset.run_timestamp()}
         if 'address' in ins:
             settings_str += f"\taddress: {ins['address']}\n"
         for para_key, para in ins['parameters'].items():
+            # for each parameter in the instrument we only export name and value
             if 'value' in para:
                 settings_str += f"\t{para_key}: {para['value']}\n"
         settings_str += '\n'
+
+    # qcodes also has standalone "parameters" in snapshot, 
+    # however, in SET files parameters must be associated to an instrument
+    instr_dict = dataset.snapshot['station']['parameters']
+    for ins_key, ins in instr_dict.items():
+        settings_str += f'Instrument: {ins_key}\n'
+        # here ins is in fact a parameter
+        for para_key, para in ins.items():
+            settings_str += f"\t{para_key}: {para}\n"
+        settings_str += '\n'
+    
+    file_path = os.path.join(folder,dat_path.replace('.dat','.set'))
+    if (not os.path.isfile(file_path)) or overwrite:
+        # if file not exists or file exists but overwrite is true
+        print(f'Saving file "{file_path}"...', end='')
+        with open(file_path, 'w') as f:
+            f.write(settings_str)
+            print(' Done.')
+    else:
+        print(f'File "{file_path}" already exists and has not been overwritten.')
+    return file_path
         
-    with open(dat_path.replace('.dat','.set'), 'w') as f:
-        f.write(settings_str)
-        
-def export_dat_file(dataset,save_to_path=None):
+def export_dat_file(dataset,folder='',overwrite=False):
     df,size_list = dataset_to_dataframe(dataset)
     meta = get_dat_meta(dataset,df,size_list)
-    if save_to_path is None:
-        save_to_path = get_dat_filename(dataset)
-    with open(save_to_path, 'w') as f:
-        f.write(meta)
-        df.to_csv(f, sep='\t', float_format='%.12e', line_terminator='\n', index=False, header=False)
+    save_to_path = get_dat_filename(dataset)
+    file_path = os.path.join(folder,save_to_path)
+    if (not os.path.isfile(file_path)) or overwrite:
+        # if file not exists or file exists but overwrite is true
+        print(f'Saving file "{file_path}"...', end='')
+        with open(file_path, 'w') as f:
+            f.write(meta)
+            df.to_csv(f, sep='\t', float_format='%.12e', line_terminator='\n', index=False, header=False)
+            print(' Done.')
+    else:
+        print(f'File "{file_path}" already exists and has not been overwritten.')
+    return file_path
+        
+
+def to_dat(db_path, exp_id, dat_folder='',overwrite=False):
+    initialise_or_create_database_at(db_path)
+    dataset = qc.load_by_id(exp_id)
+    dat_path = export_dat_file(dataset,dat_folder,overwrite)
+    export_setting_file(dataset,dat_folder,overwrite)
+    return dat_path
 ```
 
 Then load a dataset and export files: 
+
+```python
+exp_id = i
+db_file_path = r'C:\**\**.db'
+dat_folder = '**'
+dat_path = to_dat(db_file_path, exp_id, dat_folder,overwrite=False)
+```
+
+or
 
 ```python
 db_file_path = r'C:\**\**.db'
