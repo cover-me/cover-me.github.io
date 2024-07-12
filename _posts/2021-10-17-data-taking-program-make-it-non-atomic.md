@@ -3,6 +3,10 @@ layout: post
 title: "Data taking program: make it non-atomic"
 ---
 
+Update in 2024-07
+
+After reading qcodes [examples](https://microsoft.github.io/Qcodes/_modules/qcodes/dataset/dond/do_0d.html#do0d), I found it would be more clean if the data fetching process from multiple instruments is realized parallelly using threads.
+
 # Motivation
 
 Unlike [InstrDAQ](https://github.com/cover-me/instrDAQ), data taking and output channel setting in [qtlab](https://github.com/heeres/qtlab) and many other similar programs are usually atomic, i.e., operations are done by a single function, such as `instrument_X.get_reading_Y()` or `instrument_X.set_output_Y()`. On the other hand, non-atomic means that an operation is split into more than one steps, e.g., `instrument_X.send_query_message()` followed by `instrument_X.get_response()`.
