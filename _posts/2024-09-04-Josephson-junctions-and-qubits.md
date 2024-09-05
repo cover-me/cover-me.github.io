@@ -171,7 +171,7 @@ $$H_1 = D\varphi^4 = D( \frac{\sqrt{2\sqrt{AB}}}{2 i \sqrt{B}}(a^\dagger-a))^4 =
 
 $$ = \frac{AD}{4B} \sum_{\sigma_1,\sigma_2,\sigma_3,\sigma_4 \in \{I,\dagger\}} (-1)^{sign(\sigma_1,\sigma_2,\sigma_3,\sigma_4)} a^{\sigma_1}a^{\sigma_2}a^{\sigma_3}a^{\sigma_4}$$
 
-For $E^1_n = \left< n \right| H_1 \left| n \right>$ to be nonzero, we only need to consider terms with the same number of raising and lowering operators
+For $E^1_n = \left< n \right\| H_1 \left\| n \right>$ to be nonzero, we only need to consider terms with the same number of raising and lowering operators
 
 $$H_1 \approx  \frac{AD}{4B} (a^\dagger a ^\dagger a a + a^\dagger a a^\dagger a + a^\dagger a a a^\dagger + a a^\dagger a^\dagger a + a a^\dagger a a^\dagger + a a a^\dagger a^\dagger ) $$
 
