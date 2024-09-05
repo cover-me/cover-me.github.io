@@ -199,6 +199,16 @@ $$E_{n, n-1} - E_{n-1, n-2}   =  \frac{3 AD}{B}$$
 
 $3 AD/B = - A/4 = -e^2/2C$ for $\cos \varphi$, $-e^2/8C$ for $\cos \varphi/2$.
 
+![Untitled](https://github.com/user-attachments/assets/fc524f75-786d-4b6f-b7a1-a200b7cfc437)
+
+### JCG
+
+The system in subfigure (c) can be described as
+
+$$H =  A (n-n_g)^2 + V(\varphi)$$
+
+The $n_g$ term is usually introduced by coupling to the environment. So it would be nice if the energy spectrum is insensitive to $n_g$.
+
 
 
 
