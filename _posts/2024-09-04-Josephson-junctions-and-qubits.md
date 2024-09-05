@@ -155,9 +155,9 @@ Let
 
 $$H =  A n^2 + B \varphi^2+ D\varphi^4 = H_0 + H_1$$
 
-Where $H_0 = A n^2 + B \varphi^2$ has been dicussed above, $H_1 = D \varphi^4$. We treat $H_1$ as a perturbation and calculate the first-order energy shift of the n-th state $\left| n \right>$
+Where $H_0 = A n^2 + B \varphi^2$ has been dicussed above, $H_1 = D \varphi^4$. We treat $H_1$ as a perturbation and calculate the first-order energy shift of the n-th state $\left\| n \right>$
 
-$$E^1_n = \left< n \left| H_1 \right| n \right>$$
+$$E^1_n = \left< n \left\| H_1 \right\| n \right>$$
 
 With
 
