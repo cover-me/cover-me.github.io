@@ -85,7 +85,7 @@ When $\varphi = 0$  and $\Gamma_1 = \Gamma_2$ the model is reduced to the dot-su
 
 ![image](https://github.com/user-attachments/assets/792948eb-e1da-487c-86a1-bc30212f9149)
 
-### LC
+### LC oscillator
 
 First, we consider the simpler case in the subfigure (a), which consists of an inductor and a capacitor. The Hamiltonian can be written as
 
@@ -135,7 +135,7 @@ $$H = 2 \sqrt{AB} (a^\dagger a + \frac{1}{2}) = 2 \sqrt{\frac{2 e^2 }{C}\frac{\h
 
 The energy levels are evenly spaced by $\hbar \omega$, where $\omega = 1/\sqrt{LC}$. $A$ and $B$ are sometimes defined as $4 E_C$ and $E_L/2$ in literature.
 
-### JC
+### JJ-C oscillator
 
 Next, we replace the inductor with Josephson junctions, depicted in subfigure (b). Note that multiple parallel Josephson junctions, such as a SQUID, are analog to single JJs with extra tunability enabled by external fluxes. The Hamiltonian now becomes
 
@@ -193,15 +193,17 @@ So
 
 $$E_n^1 = \left< n \right| H_1 \left| n \right> = \frac{3 AD}{4B}(2n^2+2n+1)$$
 
-$$E_{n,n-1}  =  \frac{3 AD}{B} n + \hbar \omega$$
+$$E_{n-1,n}  =  \frac{3 AD}{B} n + \hbar \omega$$
 
-$$E_{n, n-1} - E_{n-1, n-2}   =  \frac{3 AD}{B}$$
+The anharmonicity
+
+$$\alpha = E_{n-1, n} - E_{n-2, n-1}   =  \frac{3 AD}{B}$$
 
 $3 AD/B = - A/4 = -e^2/2C$ for $\cos \varphi$, $-e^2/8C$ for $\cos \varphi/2$.
 
 ![Untitled](https://github.com/user-attachments/assets/fc524f75-786d-4b6f-b7a1-a200b7cfc437)
 
-### JCG
+### JJ-C-gate
 
 The system in subfigure (c) can be described as
 
