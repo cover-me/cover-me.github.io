@@ -14,6 +14,36 @@ $$E = -E_J \cos \varphi$$
 
 $$E_J = \frac{\hbar}{2 e} I_c,$$
 
+
+```python
+# Plot the energy phase relation of an SIS junction
+
+import numpy as np
+import matplotlib.pylab as plt
+
+def E_SIS(phi):
+    E_J = 1
+    return -np.cos(phi)*E_J
+
+plt.figure(figsize=(3,2))
+x = np.linspace(-np.pi,0,1001)
+y = E_SIS(x)
+
+plt.plot(x,y,'--',color='tab:blue')
+
+
+x = np.linspace(0,2*np.pi,1001)
+y = E_SIS(x)
+
+plt.plot(x,y,color='tab:blue')
+
+
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.show()
+```
+
 ![Untitled](https://github.com/user-attachments/assets/0fbefee3-7bbc-48ca-8ee3-26f414e1d621)
 
 
@@ -31,6 +61,37 @@ For a superconductor-normal metal-superconductor (SNS) junction or a superconduc
 $$E = \pm \Delta \sqrt{1-T \sin^2 (\varphi/2)},$$
 
 where T is the transparency.
+
+```python
+# Plot ABS spectra
+
+def E_SNS(phi, T):
+    Delta = 1
+    return np.sqrt(1-np.sin(phi/2)**2*T)*Delta
+
+plt.figure(figsize=(3,2))
+colors = ['tab:blue','tab:orange','tab:green','tab:brown','black']
+for t,c in zip([0,0.25,0.5,0.75,1],colors):
+    x = np.linspace(-np.pi,0,1001)
+    y = E_SNS(x,t)
+
+    plt.plot(x,y,'--',color=c,label=f'Δ=1, T={t}')
+    plt.plot(x,-y,'--',color=c)
+
+
+    x = np.linspace(0,2*np.pi,1001)
+    y = E_SNS(x,t)
+
+    plt.plot(x,y,color=c)
+    plt.plot(x,-y,color=c)
+
+
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.legend(bbox_to_anchor=[1,1])
+plt.show()
+```
 
 ![Untitled-1](https://github.com/user-attachments/assets/3dd52366-56d7-497e-92e4-d95f018b60f7)
 
@@ -73,6 +134,98 @@ $$ \Longrightarrow E^2 \approx  \epsilon^2 +\Gamma^2 - 4 \Gamma_1 \Gamma_2 \sin^
 $$ \Longrightarrow E \approx  \pm \sqrt{\epsilon^2 +\Gamma^2} \sqrt{1 -\frac{ 4 \Gamma_1 \Gamma_2}{\epsilon^2 +\Gamma^2} \sin^2 (\varphi/2)}, $$
 
 Resembling the SNS situation with $\Delta = \sqrt{\epsilon^2 +\Gamma^2}$ and $T = 4 \Gamma_1 \Gamma_2/(\epsilon^2 + \Gamma^2)$. 
+
+```python
+# Plot ABS spectra
+
+def E_SDS(phi, epsilon, gamma):
+    a = epsilon**2 + gamma**2
+    Delta = np.sqrt(a)
+    T = gamma**2/a
+    return np.sqrt(1-np.sin(phi/2)**2*T)*Delta
+
+plt.figure(figsize=(3,2))
+colors = ['tab:blue','tab:orange','tab:green','tab:brown','black']
+for t,c in zip([0,0.25,0.5,0.75,1],colors):
+    g = 1
+    epsilon=t
+    
+    x = np.linspace(-np.pi,0,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,'--',color=c,label=f'Δ→∞, Γ={g}, ε={epsilon}')
+    plt.plot(x,-y,'--',color=c)
+
+
+    x = np.linspace(0,2*np.pi,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,color=c)
+    plt.plot(x,-y,color=c)
+
+
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.legend(bbox_to_anchor=[1,1])
+plt.show()
+```
+
+```python
+plt.figure(figsize=(3,2))
+colors = ['tab:blue','tab:orange','tab:green','tab:brown','black']
+for t,c in zip([0.01,0.25,0.5,0.75,1],colors):
+    g = t
+    epsilon=0
+    
+    x = np.linspace(-np.pi,0,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,'--',color=c,label=f'Δ→∞, ε={epsilon}, Γ={g}')
+    plt.plot(x,-y,'--',color=c)
+
+
+    x = np.linspace(0,2*np.pi,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,color=c)
+    plt.plot(x,-y,color=c)
+
+
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.legend(bbox_to_anchor=[1,1])
+plt.show()
+```
+
+```python
+plt.figure(figsize=(3,2))
+colors = ['tab:blue','tab:orange','tab:green','tab:brown','black']
+for t,c in zip([0.01,0.25,0.5,0.75,1],colors):
+    g = t
+    epsilon=0.1
+    
+    x = np.linspace(-np.pi,0,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,'--',color=c,label=f'Δ→∞, ε={epsilon}, Γ={g}')
+    plt.plot(x,-y,'--',color=c)
+
+
+    x = np.linspace(0,2*np.pi,1001)
+    y = E_SDS(x,epsilon,g)
+
+    plt.plot(x,y,color=c)
+    plt.plot(x,-y,color=c)
+
+
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.legend(bbox_to_anchor=[1,1])
+plt.show()
+```
 
 ![image](https://github.com/user-attachments/assets/0898bb68-2a4f-4807-a57c-7c9e189dbee3)
 
@@ -200,6 +353,43 @@ The anharmonicity
 $$\alpha = E_{n-1, n} - E_{n-2, n-1}   =  \frac{3 AD}{B}$$
 
 $3 AD/B = - A/4 = -e^2/2C$ for $\cos \varphi$, $-e^2/8C$ for $\cos \varphi/2$.
+
+```python
+# Compare different potentials
+
+plt.figure(figsize=(3,2))
+
+x = np.linspace(-np.pi,np.pi,1001)
+y = x**2/2
+plt.plot(x,y,color='black',label='$E_J=\phi^2/2$')
+
+x = np.linspace(np.pi,2*np.pi,1001)
+y = x**2/2
+plt.plot(x,y,'--',color='black')
+
+x = np.linspace(np.pi,2*np.pi,1001)
+y = E_SIS(x)+1
+plt.plot(x,y,'--',color='tab:blue',label='$E_J=-\cos(\phi)+1$')
+
+x = np.linspace(-np.pi,np.pi,1001)
+y = E_SIS(x)+1
+plt.plot(x,y,color='tab:blue')
+
+x = np.linspace(np.pi/2,np.pi,1001)
+y = (E_SIS(x)+1)*4
+plt.plot(x*2,y,'--',color='tab:orange',label='$E_J=-4(\cos(\phi/2)+1)$')
+
+x = np.linspace(-np.pi/2,np.pi/2,1001)
+y = (E_SIS(x)+1)*4
+plt.plot(x*2,y,color='tab:orange')
+
+plt.ylim(-0.1,8.1)
+plt.legend(bbox_to_anchor=[1,1])
+plt.xticks(ticks=np.array([-1,0,1,2])*np.pi, labels=['-π',0,'π','2π'])
+plt.xlabel('φ')
+plt.ylabel('E')
+plt.show()
+```
 
 ![Untitled](https://github.com/user-attachments/assets/fc524f75-786d-4b6f-b7a1-a200b7cfc437)
 
