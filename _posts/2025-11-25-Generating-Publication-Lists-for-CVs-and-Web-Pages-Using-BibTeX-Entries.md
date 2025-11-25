@@ -60,10 +60,10 @@ In the .tex file,
 \DeclareFieldFormat{titlecase}{#1}
 \renewcommand*{\mkbibcompletename}[1]{\ifitemannotation{highlight}{\underline{#1}}{#1}}
 
-\renewcommand*{\mkbibnamefamily}[1]{%
-  \ifitemannotation{equalcontrib}{%
+\renewcommand*{\mkbibnamefamily}[1]{ %
+  \ifitemannotation{equalcontrib}{ %
     \ifitemannotation{corresponding}{{#1}$^{\dagger\#}$}{{#1}$^\dagger$}%
-  }{%
+  }{ %
     \ifitemannotation{corresponding}{{#1}$^\#$}{#1}%
   }%
 }
